@@ -1,0 +1,315 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    overscroll-behavior: none;
+  }
+  main > :first-child {
+    margin-top: 0 !important;
+  }
+  main > :last-child {
+    margin-bottom: 0 !important;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Mobile type scale to match DESIGN.md exactly */
+@media (max-width: 768px) {
+  .font-display-xl.text-display-xl {
+    font-size: 38px;
+    line-height: 46px;
+    letter-spacing: 0.03em;
+  }
+  .font-headline-lg.text-headline-lg {
+    font-size: 30px;
+    line-height: 38px;
+    letter-spacing: 0.02em;
+  }
+}
+
+/* ---------- Premium animations ---------- */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-down {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes blob-drift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(24px, -18px) scale(1.06);
+  }
+}
+
+@keyframes shine-sweep {
+  from {
+    transform: translateX(-120%) skewX(-18deg);
+  }
+  to {
+    transform: translateX(240%) skewX(-18deg);
+  }
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(89, 97, 82, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(89, 97, 82, 0);
+  }
+}
+
+@keyframes slow-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes arrow-nudge {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+.animate-fade-up {
+  opacity: 0;
+  animation: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.animate-fade-down {
+  opacity: 0;
+  animation: fade-down 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Booking modal pop-in */
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(26px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.animate-pop {
+  animation: pop-in 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.animate-float {
+  animation: float-y 5s ease-in-out infinite;
+}
+.animate-float-delayed {
+  animation: float-y 6s ease-in-out 1.2s infinite;
+}
+.animate-blob {
+  animation: blob-drift 11s ease-in-out infinite;
+}
+.animate-blob-2 {
+  animation: blob-drift 14s ease-in-out 1.5s infinite reverse;
+}
+.animate-arrow {
+  animation: arrow-nudge 1.8s ease-in-out infinite;
+}
+.pulse-dot {
+  animation: pulse-dot 2.2s ease-out infinite;
+}
+.slow-spin-hover:hover {
+  animation: slow-spin 6s linear infinite;
+}
+
+@keyframes hero-drift {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+.animate-hero-bg {
+  animation: hero-drift 26s ease-in-out infinite alternate;
+}
+
+@keyframes slide-progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.animate-slide-progress {
+  animation: slide-progress 6.5s linear forwards;
+}
+
+/* Preloader: slow halo spin + gold progress fill */
+.animate-spin-slower {
+  animation: slow-spin 9s linear infinite;
+}
+
+@keyframes loader-fill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.animate-loader-bar {
+  animation-name: loader-fill;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+/* Scroll-triggered staggered reveal (e.g. BrandIntro pillars) */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Gentle idle sway for feature cards — runs without hover */
+@keyframes gentle-sway {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-4px) rotate(0.4deg);
+  }
+  50% {
+    transform: translateY(0) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-2px) rotate(-0.4deg);
+  }
+}
+
+.animate-sway {
+  animation: gentle-sway 4.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Premium nav underline */
+.nav-premium {
+  position: relative;
+}
+.nav-premium::after {
+  content: '';
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 4px;
+  height: 1.5px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #c9a66b, #765a26);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.nav-premium:hover::after {
+  transform: scaleX(1);
+}
+
+/* Shine sweep for premium CTA */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.btn-shine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 45%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  transform: translateX(-120%) skewX(-18deg);
+  z-index: 1;
+}
+.btn-shine:hover::before {
+  animation: shine-sweep 0.9s ease;
+}
+
+/* Gold hairline for scrolled header */
+.header-scrolled {
+  box-shadow:
+    0 12px 40px -8px rgba(73, 61, 53, 0.12),
+    inset 0 -1px 0 0 rgba(201, 166, 107, 0.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-fade-down,
+  .animate-float,
+  .animate-float-delayed,
+  .animate-blob,
+  .animate-blob-2,
+  .animate-hero-bg,
+  .animate-slide-progress,
+  .animate-spin-slower,
+  .animate-loader-bar,
+  .animate-sway,
+  .animate-arrow {
+    animation: none;
+    opacity: 1;
+  }
+  .btn-shine::before {
+    display: none;
+  }
+}
