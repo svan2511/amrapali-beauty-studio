@@ -201,7 +201,7 @@ export default function Hero() {
             onMouseLeave={() => setPaused(false)}
           >
             <div className="absolute -inset-3 rounded-[2.2rem] bg-gradient-to-b from-surface-container-high/70 to-surface-container-high/30 -rotate-2 ring-1 ring-primary/10" />
-            <div className="relative overflow-hidden rounded-[2rem] h-[420px] md:h-[600px] ring-1 ring-primary/15 shadow-[0_28px_60px_-12px_rgba(118,90,38,0.35)] bg-surface-variant">
+            <div className="relative overflow-hidden rounded-[2rem] aspect-[1600/727] md:aspect-auto md:h-[600px] ring-1 ring-primary/15 shadow-[0_28px_60px_-12px_rgba(118,90,38,0.35)] bg-surface-variant">
               {HERO_SLIDES.map((s, i) => (
                 <div
                   key={s.src}
@@ -210,17 +210,6 @@ export default function Hero() {
                     i === index ? 'opacity-100' : 'opacity-0'
                   }`}
                 >
-                  {/* mobile blur fill — landscape photos show FULL on phones */}
-                  {s.fitMobile === 'contain' && (
-                    <img
-                      src={s.src}
-                      alt=""
-                      aria-hidden="true"
-                      loading="lazy"
-                      decoding="async"
-                      className="absolute inset-0 w-full h-full object-cover blur-2xl scale-110 brightness-[0.85] md:hidden"
-                    />
-                  )}
                   <img
                     key={`${s.src}-${i === index ? 'on' : 'off'}`}
                     src={s.src}
@@ -228,7 +217,7 @@ export default function Hero() {
                     loading={i === 0 ? 'eager' : 'lazy'}
                     decoding="async"
                     fetchPriority={i === 0 ? 'high' : 'auto'}
-                    className={`relative w-full h-full ${s.fitMobile === 'contain' ? 'object-contain md:object-cover' : 'object-cover'} ${i === index ? 'animate-hero-bg' : ''}`}
+                    className={`w-full h-full object-cover ${i === index ? 'animate-hero-bg' : ''}`}
                   />
                 </div>
               ))}
