@@ -19,7 +19,7 @@ const SHOTS = [
     pos: 'object-[70%_10%]',
   },
   {
-    src: IMAGES.menHairBeard,
+    src: '/beared.webp',
     title: 'Modern Haircut & Beard',
     sub: 'Sharp grooming for men',
     span: 'md:col-span-4',
@@ -27,12 +27,12 @@ const SHOTS = [
     pos: 'object-top',
   },
   {
-    src: IMAGES.skinRadiance,
+    src: IMAGES.bridalGlow,
     title: 'Skin Radiance Treatment',
     sub: 'Glow facials & festive shine',
     span: 'md:col-span-4',
     h: 'h-[260px] md:h-[300px]',
-    pos: 'object-[50%_20%]',
+    pos: 'object-top',
   },
   {
     src: IMAGES.mehndiHands,
