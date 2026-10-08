@@ -210,6 +210,17 @@ export default function Hero() {
                     i === index ? 'opacity-100' : 'opacity-0'
                   }`}
                 >
+                  {/* mobile blur fill — landscape photos show FULL on phones */}
+                  {s.fitMobile === 'contain' && (
+                    <img
+                      src={s.src}
+                      alt=""
+                      aria-hidden="true"
+                      loading="lazy"
+                      decoding="async"
+                      className="absolute inset-0 w-full h-full object-cover blur-2xl scale-110 brightness-[0.85] md:hidden"
+                    />
+                  )}
                   <img
                     key={`${s.src}-${i === index ? 'on' : 'off'}`}
                     src={s.src}
@@ -217,7 +228,7 @@ export default function Hero() {
                     loading={i === 0 ? 'eager' : 'lazy'}
                     decoding="async"
                     fetchPriority={i === 0 ? 'high' : 'auto'}
-                    className={`w-full h-full object-cover ${i === index ? 'animate-hero-bg' : ''}`}
+                    className={`relative w-full h-full ${s.fitMobile === 'contain' ? 'object-contain md:object-cover' : 'object-cover'} ${i === index ? 'animate-hero-bg' : ''}`}
                   />
                 </div>
               ))}

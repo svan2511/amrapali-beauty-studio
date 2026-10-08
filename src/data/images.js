@@ -23,6 +23,8 @@ export const IMAGES = {
 // New photo? Add one more block (src in public/, mode auto).
 // mode 'minimal' = photo already has big text/board → short overlay text
 // mode 'full'    = clean photo → full headline block
+// fitMobile 'contain' = landscape photo shows FULL on phones (blur fill
+// behind), desktop keeps cinematic cover crop.
 export const HERO_SLIDES = [
   {
     src: '/hero.webp',
@@ -34,6 +36,7 @@ export const HERO_SLIDES = [
     sub: 'Spot the golden glow on Paniyala Road — walk in for everyday grooming or a complete occasion transformation.',
     cardTitle: 'Our Studio Front',
     cardSub: 'Paniyala Road, Gandhi Nagar',
+    fitMobile: 'contain',
   },
   {
     src: '/hero-2.webp',
@@ -45,6 +48,7 @@ export const HERO_SLIDES = [
     sub: 'A modern unisex beauty sanctuary creating effortless looks, thoughtful artisanal rituals, and quiet confidence.',
     cardTitle: 'Styling Lounge',
     cardSub: 'Calm chairs, honest craft',
+    fitMobile: 'contain',
   },
   {
     src: '/hero-3.webp',
@@ -56,6 +60,7 @@ export const HERO_SLIDES = [
     sub: 'Professional-grade, cruelty-free products chosen for Indian hair textures and skin — nothing harsh, ever.',
     cardTitle: 'Curated Shelves',
     cardSub: 'Professional-grade care',
+    fitMobile: 'contain',
   },
   {
     src: '/hero-4.webp',
@@ -67,5 +72,6 @@ export const HERO_SLIDES = [
     sub: 'From quick trims to slow Sunday rituals — every chair is designed for comfort, calm and great conversation.',
     cardTitle: 'Styling Stations',
     cardSub: 'Comfort in every chair',
+    fitMobile: 'contain',
   },
 ]
