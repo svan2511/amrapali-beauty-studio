@@ -1,25 +1,23 @@
-import { IMAGES } from '../data/images.js'
-
-// All people photos are Indian subjects — real studio bridal + relatable Indian looks.
+// Real Amarpali studio looks — bridal, party & occasion makeup.
 const POSTS = [
   {
-    src: '/dulhan.webp',
-    alt: 'Indian bridal makeup by Amarpali Studio',
+    src: '/am-look-1.webp',
+    alt: 'Bridal makeup with nath and gold jewellery',
     pos: 'object-top',
   },
   {
-    src: IMAGES.menHairBeard,
-    alt: 'Indian man with styled haircut and trimmed beard',
+    src: '/am-look-2.webp',
+    alt: 'Party makeup in sky-blue gown',
     pos: 'object-top',
   },
   {
-    src: IMAGES.mehndiHands,
-    alt: 'Indian bridal mehndi hands with bangles',
-    pos: 'object-center',
+    src: '/am-look-3.webp',
+    alt: 'Engagement makeup with floral hairstyle',
+    pos: 'object-top',
   },
   {
-    src: IMAGES.heroPortrait,
-    alt: 'Indian woman in saree with festive glow',
+    src: '/am-look-4.webp',
+    alt: 'Shimmery eye makeup with elegant updo',
     pos: 'object-top',
   },
 ]
