@@ -23,8 +23,8 @@ export const IMAGES = {
 // New photo? Add one more block (src in public/, mode auto).
 // mode 'minimal' = photo already has big text/board → short overlay text
 // mode 'full'    = clean photo → full headline block
-// NOTE: all slide photos are normalized to 1600x727 so the mobile frame
-// (aspect-[1600/727]) shows them FULL with zero gray bands.
+// NOTE: mobile frame is aspect-[4/3] with contain (full photo, dark matte
+// bands) — desktop is cinematic cover. Keep slide photos landscape.
 export const HERO_SLIDES = [
   {
     src: '/hero.webp',

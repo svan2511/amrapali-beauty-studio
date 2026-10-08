@@ -144,9 +144,9 @@ export default function Hero() {
             ))}
           </div>
 
-          {/* slider controls: counter + progress + arrows */}
+          {/* slider controls: hidden on mobile (autoplay keeps running) */}
           {total > 1 && (
-            <div className="flex items-center gap-4 w-full max-w-md pt-1">
+            <div className="hidden md:flex items-center gap-4 w-full max-w-md pt-1">
               <button
                 type="button"
                 onClick={() => go(index - 1)}
@@ -201,7 +201,7 @@ export default function Hero() {
             onMouseLeave={() => setPaused(false)}
           >
             <div className="absolute -inset-3 rounded-[2.2rem] bg-gradient-to-b from-surface-container-high/70 to-surface-container-high/30 -rotate-2 ring-1 ring-primary/10" />
-            <div className="relative overflow-hidden rounded-[2rem] aspect-[1600/727] md:aspect-auto md:h-[600px] ring-1 ring-primary/15 shadow-[0_28px_60px_-12px_rgba(118,90,38,0.35)] bg-surface-variant">
+            <div className="relative overflow-hidden rounded-[2rem] aspect-[4/3] md:aspect-auto md:h-[600px] ring-1 ring-primary/15 shadow-[0_28px_60px_-12px_rgba(118,90,38,0.35)] bg-[#241b14] md:bg-surface-variant">
               {HERO_SLIDES.map((s, i) => (
                 <div
                   key={s.src}
@@ -217,7 +217,7 @@ export default function Hero() {
                     loading={i === 0 ? 'eager' : 'lazy'}
                     decoding="async"
                     fetchPriority={i === 0 ? 'high' : 'auto'}
-                    className={`w-full h-full object-cover ${i === index ? 'animate-hero-bg' : ''}`}
+                    className={`w-full h-full object-contain md:object-cover ${i === index ? 'animate-hero-bg' : ''}`}
                   />
                 </div>
               ))}
