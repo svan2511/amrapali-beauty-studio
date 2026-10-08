@@ -40,7 +40,7 @@ export const SERVICES = [
       'Not actual botox — a deep-repair filler with collagen, caviar oil and silk protein. Fills gaps in damaged fibres, tames flyaways and brings mirror shine without flattening natural volume. (Menu card: Bootox = Botox).',
     price: 'from ₹5,499',
     duration: '120 mins',
-    image: '/hero-2.webp',
+    image: IMAGES.indianHair,
     tags: ['Damage Repair', 'Mirror Shine', 'No Volume Loss'],
     badge: 'Repair Expert',
   },
@@ -55,7 +55,7 @@ export const SERVICES = [
       'Premium keratin seals the cuticle, locks out Roorkee humidity and cuts styling time in half. Includes clarifying cleanse, iron-seal finish and after-care kit guidance for up to 3 months of smooth hair.',
     price: 'from ₹4,999',
     duration: '150 mins',
-    image: IMAGES.indianHair,
+    image: IMAGES.heroPortrait,
     tags: ['Anti-Humidity', '3-Month Smooth', 'After-Care Kit'],
   },
   {
@@ -98,7 +98,7 @@ export const SERVICES = [
       'Unrushed 15-min consultation, face-shape mapping, precision cut, wash with botanical shampoo and a styled finish — from everyday bobs to layered movement and men’s textured crops.',
     price: 'from ₹499',
     duration: '45 mins',
-    image: IMAGES.menHairBeard,
+    image: '/hero-2.webp',
     tags: ['Consult First', 'Unisex', 'Blowdry Finish'],
   },
   {
@@ -112,7 +112,7 @@ export const SERVICES = [
       'From rich chocolate globals to sun-kissed balayage — strand-tested, ammonia-conscious colour with Olaplex-style bond care, gloss toner and a colour-lock spa rinse.',
     price: 'from ₹3,499',
     duration: '150 mins',
-    image: '/hero.webp',
+    image: '/am-look-3.webp',
     tags: ['Strand Test', 'Bond Care', 'Gloss Toner'],
   },
   {
@@ -126,7 +126,7 @@ export const SERVICES = [
       'Warm-towel steam, acupressure scalp massage, botanical masque and cool rinse. The perfect monthly reset for dryness, dandruff-prone scalps and festival-season stress.',
     price: 'from ₹1,299',
     duration: '60 mins',
-    image: IMAGES.heroPortrait,
+    image: '/am-look-4.webp',
     tags: ['Steam + Massage', 'Monthly Reset'],
   },
   // ---------- SKIN ----------
@@ -141,7 +141,7 @@ export const SERVICES = [
       'Our most-booked facial: lymphatic cleanse, gentle hydro-exfoliation, blackhead extraction and hyaluronic + vitamin infusion. Zero downtime, camera-ready glow in 60 minutes.',
     price: 'from ₹2,499',
     duration: '60 mins',
-    image: IMAGES.skinRadiance,
+    image: '/am-look-2.webp',
     tags: ['No Downtime', 'Glass Glow', 'Blackhead Clear'],
     badge: 'Best Seller',
   },
@@ -156,7 +156,7 @@ export const SERVICES = [
       'Double cleanse, rice-enzyme polish, sheet + modelling mask layers, snail-mucin essence and glass-skin seal. Built for dull, dehydrated Indian skin that needs bounce back.',
     price: 'from ₹2,999',
     duration: '75 mins',
-    image: '/dulhan-2.webp',
+    image: IMAGES.bridalGlow,
     tags: ['K-Beauty', '7 Layers', 'Dewy Bounce'],
     badge: 'Trending',
   },
@@ -171,7 +171,7 @@ export const SERVICES = [
       'The everyday essential: cleanse, exfoliate, steam extraction, relaxing massage and mask matched to your skin type. Perfect first facial and monthly upkeep between advanced facials.',
     price: 'from ₹999',
     duration: '45 mins',
-    image: IMAGES.bridalGlow,
+    image: IMAGES.skinRadiance,
     tags: ['Monthly Care', 'All Skin Types'],
   },
   {
@@ -185,7 +185,7 @@ export const SERVICES = [
       'Botanical de-tan pack, soft crystal polish and brightening serum massage to lift sun-dullness from face-neck. A favourite before weddings, vacations and festive shoots.',
     price: 'from ₹1,499',
     duration: '50 mins',
-    image: '/dulhan-22.webp',
+    image: '/am-look-1.webp',
     tags: ['Tan Lift', 'Even Tone', 'Pre-Event'],
   },
   // ---------- MAKEUP ----------
@@ -215,7 +215,7 @@ export const SERVICES = [
       'Engagement, sagan, cocktail or festive glam — skin-like base, sculpted eyes, setting ritual and hairstyling add-on. Photos beautifully, lasts through the night.',
     price: 'from ₹2,999',
     duration: '90 mins',
-    image: IMAGES.weddingCouple,
+    image: '/dulhan-2.webp',
     tags: ['Long-Wear', 'Lashes Incl.', 'Hair Add-On'],
   },
   {
@@ -273,7 +273,7 @@ export const SERVICES = [
       'For the modern gentleman: hot-towel prep, precision sculpt, razor line-up, charcoal nose/mask add-on and beard oil finish. Sharp without the harsh.',
     price: 'from ₹399',
     duration: '30 mins',
-    image: IMAGES.menHairBeard,
+    image: '/beared.webp',
     tags: ['Hot Towel', 'Unisex Studio'],
   },
   {
