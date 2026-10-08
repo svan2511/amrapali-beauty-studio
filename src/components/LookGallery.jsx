@@ -3,7 +3,7 @@ import { IMAGES } from '../data/images.js'
 
 const SHOTS = [
   {
-    src: '/dulhan.png',
+    src: '/dulhan.webp',
     title: 'Signature Bridal Glow',
     sub: 'HD bridal artistry, nath & heirloom jewellery',
     span: 'md:col-span-7',
@@ -11,7 +11,7 @@ const SHOTS = [
     pos: 'object-top',
   },
   {
-    src: '/dulhan-2.png',
+    src: '/dulhan-2.webp',
     title: 'Bridal Lehenga Moments',
     sub: 'Complete bridal styling in our studio',
     span: 'md:col-span-5',

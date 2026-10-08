@@ -16,7 +16,7 @@ export default function Preloader({ phase, full, runId }) {
         <span className="absolute -inset-3 rounded-full bg-gradient-to-tr from-primary-container via-primary-fixed to-primary-container opacity-50 blur-xl" />
         <span className="animate-spin-slower absolute -inset-2.5 rounded-full border border-dashed border-primary/50" />
         <img
-          src="/logo.png"
+          src="/logo.webp"
           alt=""
           className="relative h-24 w-24 rounded-full object-contain bg-[#f6efe6] p-1 ring-1 ring-primary/30 shadow-[0_16px_40px_-10px_rgba(118,90,38,0.5)]"
         />

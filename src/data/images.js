@@ -25,7 +25,7 @@ export const IMAGES = {
 // mode 'full'    = clean photo → full headline block
 export const HERO_SLIDES = [
   {
-    src: '/hero.png',
+    src: '/hero.webp',
     alt: 'Aamarpali Beauty Spa studio front in Roorkee',
     mode: 'minimal',
     eyebrow: 'Visit Our Studio',
@@ -36,7 +36,7 @@ export const HERO_SLIDES = [
     cardSub: 'Paniyala Road, Gandhi Nagar',
   },
   {
-    src: '/hero-2.png',
+    src: '/hero-2.webp',
     alt: 'Inside Amarpali Beauty Studio salon in Roorkee',
     mode: 'full',
     eyebrow: 'The Sanctuary',
@@ -47,7 +47,7 @@ export const HERO_SLIDES = [
     cardSub: 'Calm chairs, honest craft',
   },
   {
-    src: '/hero-3.png',
+    src: '/hero-3.webp',
     alt: 'Premium product wall and styling mirror at Amarpali Studio',
     mode: 'full',
     eyebrow: 'Curated & Clean',
@@ -58,7 +58,7 @@ export const HERO_SLIDES = [
     cardSub: 'Professional-grade care',
   },
   {
-    src: '/hero-4.png',
+    src: '/hero-4.webp',
     alt: 'Styling chairs and lounge at Amarpali Beauty Studio',
     mode: 'full',
     eyebrow: 'Take A Seat',

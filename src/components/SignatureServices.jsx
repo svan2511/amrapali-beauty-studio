@@ -114,7 +114,7 @@ export default function SignatureServices() {
               <img
                 alt="Inside Amarpali Beauty Studio — styling stations and curated product shelves"
                 className="w-full h-[480px] object-cover object-center transition-opacity duration-500"
-                src="/beauty.png"
+                src="/beauty.webp"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-inverse-surface/70 via-transparent to-transparent flex flex-col justify-end p-8 text-inverse-on-surface">
                 <span className="font-label-sm text-label-sm uppercase tracking-widest text-primary-fixed">

@@ -120,7 +120,7 @@ export default function Services() {
             <div className="animate-float relative w-full max-w-md">
               <div className="absolute -inset-3 rounded-t-[14rem] rounded-b-3xl bg-surface-container-high/50 -rotate-2 ring-1 ring-primary/10" />
               <div className="relative overflow-hidden rounded-t-[13.5rem] rounded-b-2xl shadow-[0_28px_60px_-12px_rgba(118,90,38,0.35)] ring-1 ring-primary/15 bg-surface-variant">
-                <img src="/hero-3.png" alt="Inside Amarpali studio — hair ritual lounge" className="w-full h-[440px] md:h-[520px] object-cover object-center" />
+                <img src="/hero-3.webp" alt="Inside Amarpali studio — hair ritual lounge" className="w-full h-[440px] md:h-[520px] object-cover object-center" />
                 <div className="absolute inset-0 bg-gradient-to-t from-inverse-surface/50 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-0 inset-x-0 p-6 flex items-end justify-between">
                   <div className="bg-surface-container-lowest/90 backdrop-blur px-4 py-2.5 rounded-2xl ring-1 ring-white/40 shadow-lg">

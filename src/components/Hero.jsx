@@ -214,6 +214,9 @@ export default function Hero() {
                     key={`${s.src}-${i === index ? 'on' : 'off'}`}
                     src={s.src}
                     alt={i === index ? s.alt : ''}
+                    loading={i === 0 ? 'eager' : 'lazy'}
+                    decoding="async"
+                    fetchPriority={i === 0 ? 'high' : 'auto'}
                     className={`w-full h-full object-cover ${i === index ? 'animate-hero-bg' : ''}`}
                   />
                 </div>

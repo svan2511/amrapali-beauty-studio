@@ -16,7 +16,7 @@ export default function Footer() {
           <div className="lg:col-span-5 flex flex-col gap-4">
             <div className="flex items-center gap-3">
               <img
-                src="/logo.png"
+                src="/logo.webp"
                 alt="Amarpali Beauty Studio"
                 className="h-12 w-12 rounded-full object-contain bg-[#f6efe6] p-0.5 shrink-0 ring-1 ring-primary-fixed/30"
               />

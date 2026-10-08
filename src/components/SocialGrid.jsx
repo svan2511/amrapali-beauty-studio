@@ -3,7 +3,7 @@ import { IMAGES } from '../data/images.js'
 // All people photos are Indian subjects — real studio bridal + relatable Indian looks.
 const POSTS = [
   {
-    src: '/dulhan.png',
+    src: '/dulhan.webp',
     alt: 'Indian bridal makeup by Amarpali Studio',
     pos: 'object-top',
   },

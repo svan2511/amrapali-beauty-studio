@@ -59,7 +59,7 @@ export default function About() {
               <div className="absolute -inset-3 rounded-t-[14rem] rounded-b-3xl bg-surface-container-high/50 -rotate-2 ring-1 ring-primary/10" />
               <div className="relative overflow-hidden rounded-t-[13.5rem] rounded-b-2xl shadow-[0_28px_60px_-12px_rgba(118,90,38,0.35)] ring-1 ring-primary/15 bg-surface-variant">
                 <img
-                  src="/dulhan.png"
+                  src="/dulhan.webp"
                   alt="Signature Amarpali bridal artistry"
                   className="w-full h-[440px] md:h-[520px] object-cover object-top"
                 />
@@ -92,7 +92,7 @@ export default function About() {
             <div className="animate-sway">
               <div className="relative overflow-hidden rounded-[2rem] h-[380px] md:h-[480px] ring-1 ring-primary/15 shadow-[0_28px_60px_-12px_rgba(118,90,38,0.3)]">
                 <img
-                  src="/hero-3.png"
+                  src="/hero-3.webp"
                   alt="Inside Amarpali Beauty Studio Roorkee"
                   className="w-full h-full object-cover"
                 />

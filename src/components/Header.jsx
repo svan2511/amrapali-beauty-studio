@@ -112,7 +112,7 @@ export default function Header() {
             <img
               alt="Amarpali Beauty Studio Logo"
               className="relative h-12 w-12 rounded-full object-contain bg-[#f6efe6] p-0.5 shadow-sm shrink-0 ring-1 ring-primary/25 transition-transform duration-500 group-hover:scale-105 group-hover:rotate-3"
-              src="/logo.png"
+              src="/logo.webp"
             />
           </span>
           {/* slim gold divider between mark and wordmark */}
