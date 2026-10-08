@@ -196,7 +196,7 @@ export default function LookGallery() {
               <p className="font-body-sm text-body-sm text-white/70">{current.sub}</p>
             </div>
 
-            <div className="flex items-center justify-center gap-2.5 pt-1">
+            <div className="flex flex-wrap items-center justify-center gap-2.5 pt-1 px-2">
               {SHOTS.map((s, i) => (
                 <button
                   key={s.src}

@@ -124,7 +124,7 @@ export default function Hero() {
           </div>
 
           {/* trust stats */}
-          <div className="grid grid-cols-3 gap-6 max-w-md w-full">
+          <div className="grid grid-cols-3 gap-4 sm:gap-6 max-w-md w-full">
             {[
               { top: '100%', bottom: 'Unisex Rituals' },
               { top: '4.9★', bottom: 'Google Rating' },
@@ -132,7 +132,7 @@ export default function Hero() {
             ].map((s, i) => (
               <div
                 key={s.bottom}
-                className={`flex flex-col ${i > 0 ? 'border-l border-primary/15 pl-6' : ''}`}
+                className={`flex flex-col ${i > 0 ? 'border-l border-primary/15 pl-4 sm:pl-6' : ''}`}
               >
                 <span className="font-headline-md text-headline-md text-on-surface font-normal">
                   {s.top}

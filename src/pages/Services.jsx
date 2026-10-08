@@ -344,7 +344,7 @@ export default function Services() {
                 <h3 className="font-title-md text-title-md text-white">{current.title}</h3>
                 <p className="font-body-sm text-body-sm text-white/70">{current.sub}</p>
               </div>
-              <div className="flex items-center justify-center gap-2.5 pt-1">
+              <div className="flex flex-wrap items-center justify-center gap-2.5 pt-1 px-2">
                 {SERVICE_GALLERY.map((g, i) => (
                   <button key={g.src + i} type="button" onClick={() => setActive(i)} aria-label={`View ${g.title}`} className={`h-14 w-14 rounded-xl overflow-hidden ring-2 transition-all duration-300 ${i === active ? 'ring-primary-fixed scale-105 opacity-100' : 'ring-white/15 opacity-50 hover:opacity-90'}`}>
                     <img src={g.src} alt="" className="w-full h-full object-cover object-top" />

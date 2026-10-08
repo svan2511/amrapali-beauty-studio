@@ -203,7 +203,7 @@ export default function Awards() {
             </div>
 
             {/* thumbnails */}
-            <div className="flex items-center justify-center gap-2.5 pt-1">
+            <div className="flex flex-wrap items-center justify-center gap-2.5 pt-1 px-2">
               {AWARDS.map((a, i) => (
                 <button
                   key={a.src}
