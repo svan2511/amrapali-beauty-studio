@@ -222,8 +222,8 @@ export default function Services() {
                   key={s.id}
                   className="group relative flex flex-col overflow-hidden rounded-[1.75rem] bg-surface-container-lowest ring-1 ring-primary/12 shadow-[0_20px_48px_-12px_rgba(73,61,53,0.14)] hover:shadow-[0_28px_64px_-12px_rgba(118,90,38,0.3)] hover:-translate-y-1 transition-all duration-500"
                 >
-                  <div className="relative h-56 overflow-hidden">
-                    <img src={s.image} alt={s.title} loading="lazy" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+                  <div className="relative h-72 sm:h-80 overflow-hidden">
+                    <img src={s.image} alt={s.title} loading="lazy" className={`w-full h-full object-cover ${s.pos ?? 'object-top'} transition-transform duration-700 group-hover:scale-105`} />
                     <div className="absolute inset-0 bg-gradient-to-t from-inverse-surface/60 via-transparent to-transparent" />
                     <span className="absolute top-4 left-4 font-display-xl text-[26px] text-white/85 font-light tabular-nums drop-shadow">{s.num}</span>
                     {s.badge && (
@@ -238,7 +238,7 @@ export default function Services() {
                       {s.duration}
                     </span>
                   </div>
-                  <div className="flex flex-col gap-3 p-6 sm:p-7 flex-1">
+                  <div className="flex flex-col gap-2.5 p-5 sm:p-6 flex-1">
                     <div>
                       <p className="font-label-sm text-label-sm uppercase tracking-[0.16em] text-primary">
                         {SERVICE_CATEGORIES.find((c) => c.id === s.category)?.label}

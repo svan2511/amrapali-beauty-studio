@@ -35,15 +35,46 @@ export default function SocialGrid() {
               Follow the Amarpali Look
             </h3>
           </div>
-          <a
-            className="inline-flex items-center gap-2 font-label-md text-label-md text-on-surface hover:text-primary transition-colors"
-            href="https://instagram.com"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <span>@AmarpaliBeautyStudio</span>
-            <span className="material-symbols-outlined text-sm">open_in_new</span>
-          </a>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <a
+              className="inline-flex items-center gap-2 font-label-md text-label-md text-on-surface hover:text-primary transition-colors"
+              href="https://www.instagram.com/amarpalibeautystudio_"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                className="w-[18px] h-[18px] shrink-0"
+                aria-hidden="true"
+              >
+                <defs>
+                  <linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#FFD600" />
+                    <stop offset="35%" stopColor="#FF7A00" />
+                    <stop offset="60%" stopColor="#FF0069" />
+                    <stop offset="85%" stopColor="#D300C5" />
+                    <stop offset="100%" stopColor="#7638FA" />
+                  </linearGradient>
+                </defs>
+                <rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="url(#ig-grad)" strokeWidth="2" />
+                <circle cx="12" cy="12" r="4" fill="none" stroke="url(#ig-grad)" strokeWidth="2" />
+                <circle cx="17.5" cy="6.5" r="1.3" fill="url(#ig-grad)" />
+              </svg>
+              <span>@AmarpaliBeautyStudio</span>
+            </a>
+            <span className="w-1 h-1 rounded-full bg-primary/30" aria-hidden="true" />
+            <a
+              className="inline-flex items-center gap-2 font-label-md text-label-md text-on-surface hover:text-primary transition-colors"
+              href="https://www.facebook.com/share/19rN5jR5qD/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <svg viewBox="0 0 24 24" className="w-[18px] h-[18px] shrink-0" aria-hidden="true" fill="#1877F2">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+              <span>Amarpali Beauty Studio</span>
+            </a>
+          </div>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {POSTS.map((p) => (

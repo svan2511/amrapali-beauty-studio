@@ -201,6 +201,7 @@ export const SERVICES = [
     price: 'Custom • Trial incl.',
     duration: 'Half-day ritual',
     image: '/dulhan.webp',
+    pos: 'object-[50%_5%]',
     tags: ['HD + Airbrush', 'Trial Included', 'Draping Help'],
     badge: 'Award-Winning',
   },
@@ -216,6 +217,7 @@ export const SERVICES = [
     price: 'from ₹2,999',
     duration: '90 mins',
     image: '/dulhan-2.webp',
+    pos: 'object-[50%_25%]',
     tags: ['Long-Wear', 'Lashes Incl.', 'Hair Add-On'],
   },
   {
@@ -229,7 +231,8 @@ export const SERVICES = [
       'Personalised 3–4 sitting plan: facials sequenced to your date, full-body polish, manicure-pedicure, waxing/threading and hair gloss — timed so glow peaks on wedding day.',
     price: 'from ₹9,999',
     duration: 'Multi-visit',
-    image: IMAGES.mehndiHands,
+    image: '/dulhan-4.webp',
+    pos: 'object-[50%_8%]',
     tags: ['Dated Plan', 'Head-to-Toe'],
   },
   // ---------- NAILS ----------
@@ -308,9 +311,13 @@ export const SERVICES = [
 
 export const SERVICE_GALLERY = [
   { src: '/dulhan.webp', title: 'Signature Bridal Glow', sub: 'HD bridal artistry in-studio' },
+  { src: '/dulhan-2.webp', title: 'Occasion Styling', sub: 'Party, engagement & festive looks' },
+  { src: '/dulhan-3.webp', title: 'Royal Bridal Look', sub: 'Real Amarpali bride' },
+  { src: '/dulhan-5.webp', title: 'Elegant Bridal Charm', sub: 'Real Amarpali bride' },
+  { src: '/dulhan-7.webp', title: 'Radiant Bridal Glow', sub: 'Real Amarpali bride' },
+  { src: '/dulhan-9.webp', title: 'Dreamy Bridal Portrait', sub: 'Real Amarpali bride' },
   { src: '/hero-3.webp', title: 'Hair Ritual Lounge', sub: 'Nanoplastia • Botox • Keratin bar' },
   { src: '/hero-2.webp', title: 'Styling Stations', sub: 'Precision cuts & colour craft' },
   { src: '/beauty.webp', title: 'Glow & Skin Suite', sub: 'Hydra • Korean • Classic facials' },
-  { src: '/dulhan-2.webp', title: 'Occasion Styling', sub: 'Party, engagement & festive looks' },
   { src: '/hero-4.webp', title: 'Calm Chairs, Honest Craft', sub: 'Unisex sanctuary, Roorkee' },
 ]

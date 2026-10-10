@@ -6,9 +6,9 @@ export default function FeaturedExperience() {
           <div className="animate-sway">
           <div className="relative rounded-3xl overflow-hidden shadow-[0_20px_48px_-8px_rgba(73,61,53,0.06)] aspect-[4/3]">
             <img
-              className="w-full h-full object-cover object-[70%_10%]"
+              className="w-full h-full object-cover object-[50%_32%]"
               src="/dulhan-2.webp"
-              alt="Real Amarpali bride in red lehenga with bridal jewellery"
+              alt="Real Amarpali bride in embellished gown with bridal jewellery"
             />
             <div className="absolute inset-0 bg-primary/10 mix-blend-multiply pointer-events-none"></div>
           </div>

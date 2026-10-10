@@ -55,7 +55,7 @@ export default function Footer() {
               </span>
               <div className="flex flex-col gap-1">
                 <p className="font-body-sm text-body-sm text-inverse-on-surface">
-                  Dawarka Apartment, Paniyala Rd, Gandhi Nagar, Roorkee, Uttarakhand
+                  Dwarka Apartment, Azad Nagar, Roorkee, Uttarakhand
                 </p>
                 <a
                   className="font-label-md text-label-md text-primary-fixed-dim hover:text-primary-fixed underline transition-colors"

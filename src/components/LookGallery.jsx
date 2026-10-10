@@ -1,58 +1,144 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
-import { IMAGES } from '../data/images.js'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 const SHOTS = [
   {
     src: '/dulhan.webp',
     title: 'Signature Bridal Glow',
     sub: 'HD bridal artistry, nath & heirloom jewellery',
-    span: 'md:col-span-7',
-    h: 'h-[320px] md:h-[380px]',
-    pos: 'object-top',
+    cat: 'bridal',
+    pos: 'object-[50%_5%]',
   },
   {
     src: '/dulhan-2.webp',
     title: 'Bridal Lehenga Moments',
     sub: 'Complete bridal styling in our studio',
-    span: 'md:col-span-5',
-    h: 'h-[320px] md:h-[380px]',
-    pos: 'object-[70%_10%]',
+    cat: 'bridal',
+    pos: 'object-[50%_25%]',
   },
   {
     src: '/beared.webp',
     title: 'Modern Haircut & Beard',
     sub: 'Sharp grooming for men',
-    span: 'md:col-span-4',
-    h: 'h-[260px] md:h-[300px]',
+    cat: 'grooming',
+    pos: 'object-[50%_22%]',
+  },
+  {
+    src: '/dulhan-3.webp',
+    title: 'Royal Bridal Look',
+    sub: 'Real Amarpali bride, in-studio',
+    cat: 'bridal',
+    pos: 'object-[50%_20%]',
+  },
+  {
+    src: '/dulhan-4.webp',
+    title: 'Traditional Bridal Grace',
+    sub: 'Real Amarpali bride, in-studio',
+    cat: 'bridal',
+    pos: 'object-[50%_8%]',
+  },
+  {
+    src: '/dulhan-5.webp',
+    title: 'Elegant Bridal Charm',
+    sub: 'Real Amarpali bride, in-studio',
+    cat: 'bridal',
+    pos: 'object-[50%_5%]',
+  },
+  {
+    src: '/dulhan-6.webp',
+    title: 'Timeless Bridal Beauty',
+    sub: 'Real Amarpali bride, in-studio',
+    cat: 'bridal',
+    pos: 'object-[50%_10%]',
+  },
+  {
+    src: '/dulhan-7.webp',
+    title: 'Radiant Bridal Glow',
+    sub: 'Real Amarpali bride, in-studio',
+    cat: 'bridal',
     pos: 'object-top',
   },
   {
-    src: IMAGES.bridalGlow,
-    title: 'Skin Radiance Treatment',
-    sub: 'Glow facials & festive shine',
-    span: 'md:col-span-4',
-    h: 'h-[260px] md:h-[300px]',
+    src: '/dulhan-8.webp',
+    title: 'Classic Bridal Elegance',
+    sub: 'Real Amarpali bride, in-studio',
+    cat: 'bridal',
     pos: 'object-top',
   },
   {
-    src: IMAGES.mehndiHands,
-    title: 'Mehndi, Nails & Spa',
-    sub: 'Henna, bangles & finesse',
-    span: 'md:col-span-4',
-    h: 'h-[260px] md:h-[300px]',
-    pos: 'object-center',
+    src: '/dulhan-9.webp',
+    title: 'Dreamy Bridal Portrait',
+    sub: 'Real Amarpali bride, in-studio',
+    cat: 'bridal',
+    pos: 'object-top',
+  },
+  {
+    src: '/dulhan-10.webp',
+    title: 'Stunning Bridal Finale',
+    sub: 'Real Amarpali bride, in-studio',
+    cat: 'bridal',
+    pos: 'object-[50%_5%]',
   },
 ]
 
+const FILTERS = [
+  { id: 'all', label: 'All Looks' },
+  { id: 'bridal', label: 'Bridal' },
+  { id: 'grooming', label: 'Grooming' },
+]
+
+const PAGE = 4
+
+// Editorial spans: first two large (7+5), rest small.
+// Exactly 4 visible → last two go 6+6 so the row fills neatly.
+function spanFor(i, n) {
+  if (n === 1) return 'md:col-span-12'
+  if (n === 2) return 'md:col-span-6'
+  if (i === 0) return 'md:col-span-7'
+  if (i === 1) return 'md:col-span-5'
+  if (n === 4) return 'md:col-span-6'
+  return 'md:col-span-4'
+}
+
+function heightFor(i, n) {
+  if (n <= 2) return 'h-[320px] md:h-[380px]'
+  if (i < 2) return 'h-[320px] md:h-[380px]'
+  return 'h-[260px] md:h-[300px]'
+}
+
 export default function LookGallery() {
-  const [active, setActive] = useState(null) // index | null
+  const [filter, setFilter] = useState('all')
+  const [expanded, setExpanded] = useState(false)
+  const [active, setActive] = useState(null) // index into filtered | null
   const touchX = useRef(null)
 
-  const close = useCallback(() => setActive(null), [])
-  const next = useCallback(() => setActive((i) => (i === null ? i : (i + 1) % SHOTS.length)), [])
-  const prev = useCallback(
-    () => setActive((i) => (i === null ? i : (i - 1 + SHOTS.length) % SHOTS.length)),
+  const filtered = useMemo(
+    () => (filter === 'all' ? SHOTS : SHOTS.filter((s) => s.cat === filter)),
+    [filter],
+  )
+  const visible = expanded ? filtered : filtered.slice(0, PAGE)
+
+  const counts = useMemo(
+    () => ({
+      all: SHOTS.length,
+      bridal: SHOTS.filter((s) => s.cat === 'bridal').length,
+      grooming: SHOTS.filter((s) => s.cat === 'grooming').length,
+    }),
     [],
+  )
+
+  const pickFilter = (id) => {
+    setFilter(id)
+    setExpanded(false)
+  }
+
+  const close = useCallback(() => setActive(null), [])
+  const next = useCallback(
+    () => setActive((i) => (i === null ? i : (i + 1) % filtered.length)),
+    [filtered.length],
+  )
+  const prev = useCallback(
+    () => setActive((i) => (i === null ? i : (i - 1 + filtered.length) % filtered.length)),
+    [filtered.length],
   )
 
   // Keyboard nav + scroll lock while open
@@ -83,11 +169,11 @@ export default function LookGallery() {
     touchX.current = null
   }
 
-  const current = active === null ? null : SHOTS[active]
+  const current = active === null ? null : filtered[active]
 
   return (
     <section id="gallery" className="w-full bg-surface py-20 md:py-28 px-6 lg:px-12">
-      <div className="max-w-7xl mx-auto flex flex-col gap-12">
+      <div className="max-w-7xl mx-auto flex flex-col gap-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
             <span className="font-label-sm text-label-sm uppercase tracking-widest text-primary">
@@ -106,13 +192,44 @@ export default function LookGallery() {
           </div>
         </div>
 
+        {/* ---------- Category filter ---------- */}
+        <div className="flex flex-wrap items-center gap-2.5">
+          {FILTERS.map((f) => {
+            const on = filter === f.id
+            return (
+              <button
+                key={f.id}
+                type="button"
+                onClick={() => pickFilter(f.id)}
+                className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-full font-label-md text-label-md ring-1 transition-all duration-300 ${
+                  on
+                    ? 'bg-primary text-on-primary ring-primary shadow-[0_10px_28px_-8px_rgba(118,90,38,0.6)]'
+                    : 'bg-surface-container-low text-on-surface-variant ring-primary/15 hover:ring-primary/35 hover:text-on-surface'
+                }`}
+              >
+                {f.label}
+                <span
+                  className={`text-[11px] tabular-nums px-1.5 py-0.5 rounded-full ${
+                    on ? 'bg-white/20' : 'bg-primary/10 text-primary'
+                  }`}
+                >
+                  {counts[f.id]}
+                </span>
+              </button>
+            )
+          })}
+          <span className="ml-auto font-body-sm text-body-sm text-outline">
+            Showing {visible.length} of {filtered.length}
+          </span>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
-          {SHOTS.map((s, i) => (
+          {visible.map((s, i) => (
             <button
               key={s.src}
               type="button"
               onClick={() => setActive(i)}
-              className={`group relative overflow-hidden rounded-3xl bg-surface-container-high ring-1 ring-primary/10 shadow-[0_20px_48px_-8px_rgba(73,61,53,0.10)] cursor-zoom-in text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${s.span} ${s.h}`}
+              className={`group relative overflow-hidden rounded-3xl bg-surface-container-high ring-1 ring-primary/10 shadow-[0_20px_48px_-8px_rgba(73,61,53,0.10)] cursor-zoom-in text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${spanFor(i, visible.length)} ${heightFor(i, visible.length)}`}
             >
               <img
                 src={s.src}
@@ -132,6 +249,32 @@ export default function LookGallery() {
             </button>
           ))}
         </div>
+
+        {/* ---------- View all / Show less ---------- */}
+        {filtered.length > PAGE && (
+          <div className="flex flex-col items-center gap-3">
+            <div className="flex items-center gap-4 w-full max-w-2xl">
+              <span className="h-px flex-1 bg-gradient-to-r from-transparent via-primary-container/70 to-primary-container/70" />
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-[0.16em] ring-1 ring-primary/15 whitespace-nowrap">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary-container" />
+                {expanded ? `${filtered.length} looks` : `+${filtered.length - PAGE} more`}
+              </span>
+              <span className="h-px flex-1 bg-gradient-to-l from-transparent via-primary-container/70 to-primary-container/70" />
+            </div>
+            <button
+              type="button"
+              onClick={() => setExpanded((e) => !e)}
+              className="group inline-flex items-center gap-2 px-7 py-3 rounded-full bg-surface-container-low text-on-surface ring-1 ring-primary/15 font-label-lg text-label-lg hover:bg-primary hover:text-on-primary hover:-translate-y-0.5 transition-all duration-300"
+            >
+              <span>{expanded ? 'Show Less' : `View All ${filtered.length} Looks`}</span>
+              <span
+                className={`material-symbols-outlined text-[18px] transition-transform duration-300 ${expanded ? 'rotate-180' : 'group-hover:translate-y-0.5'}`}
+              >
+                expand_more
+              </span>
+            </button>
+          </div>
+        )}
       </div>
 
       {/* ---------- Lightbox slider (same as awards) ---------- */}
@@ -154,7 +297,7 @@ export default function LookGallery() {
                 <span className="material-symbols-outlined text-[16px] text-primary-fixed-dim">
                   photo_library
                 </span>
-                {active + 1} / {SHOTS.length}
+                {active + 1} / {filtered.length}
               </span>
               <button
                 type="button"
@@ -197,7 +340,7 @@ export default function LookGallery() {
             </div>
 
             <div className="flex flex-wrap items-center justify-center gap-2.5 pt-1 px-2">
-              {SHOTS.map((s, i) => (
+              {filtered.map((s, i) => (
                 <button
                   key={s.src}
                   type="button"

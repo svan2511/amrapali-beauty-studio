@@ -88,12 +88,12 @@ export default function Contact() {
             <div className="animate-float relative w-full max-w-2xl">
               <div className="absolute -inset-3 rounded-t-[14rem] rounded-b-3xl bg-surface-container-high/50 -rotate-2 ring-1 ring-primary/10" />
               <div className="relative overflow-hidden rounded-t-[13.5rem] rounded-b-2xl shadow-[0_28px_60px_-12px_rgba(118,90,38,0.35)] ring-1 ring-primary/15 bg-surface-variant">
-                <img src="/hero.webp" alt="Amarpali Beauty Studio front on Paniyala Road, Roorkee" className="w-full h-[420px] md:h-[600px] object-cover object-center" />
+                <img src="/hero.webp" alt="Amarpali Beauty Studio front at Azad Nagar, Roorkee" className="w-full h-[420px] md:h-[600px] object-cover object-center" />
                 <div className="absolute inset-0 bg-gradient-to-t from-inverse-surface/50 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-0 inset-x-0 p-6">
                   <div className="bg-surface-container-lowest/90 backdrop-blur px-4 py-2.5 rounded-2xl ring-1 ring-white/40 shadow-lg">
-                    <p className="font-label-md text-label-md text-on-surface">Dawarka Apartment, Paniyala Rd</p>
-                    <p className="font-body-sm text-body-sm text-outline">Gandhi Nagar, Roorkee — 247667</p>
+                    <p className="font-label-md text-label-md text-on-surface">Dwarka Apartment, Azad Nagar</p>
+                    <p className="font-body-sm text-body-sm text-outline">Roorkee, Uttarakhand — 247667</p>
                   </div>
                 </div>
               </div>
@@ -106,7 +106,7 @@ export default function Contact() {
       <section className="w-full bg-surface-container-lowest py-14 md:py-20 px-6 lg:px-12 border-y border-primary/10">
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { icon: 'location_on', t: 'Studio Address', d: 'Dawarka Apartment, Paniyala Rd, Gandhi Nagar, Roorkee, Uttarakhand — 247667', action: { label: 'Get Directions', href: DIRECTIONS_URL, ext: true } },
+            { icon: 'location_on', t: 'Studio Address', d: 'Dwarka Apartment, Azad Nagar, Roorkee, Uttarakhand — 247667', action: { label: 'Get Directions', href: DIRECTIONS_URL, ext: true } },
             { icon: 'call', t: 'Call / WhatsApp', d: `${PHONE_1} • ${PHONE_2}`, action: { label: 'Call Now', href: `tel:+${WA_NUMBER}` } },
             { icon: 'mail', t: 'Email Us', d: DUMMY_EMAIL, action: { label: 'Write Mail', href: `mailto:${DUMMY_EMAIL}` } },
             { icon: 'schedule', t: 'Hours', d: 'Monday – Sunday: 10:00 AM – 08:30 PM, open all 7 days', action: { label: 'Book a Slot', href: '#enquire' } },

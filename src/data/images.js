@@ -33,9 +33,9 @@ export const HERO_SLIDES = [
     eyebrow: 'Visit Our Studio',
     titleA: "Roorkee's own",
     titleAccent: 'luxury unisex salon.',
-    sub: 'Spot the golden glow on Paniyala Road — walk in for everyday grooming or a complete occasion transformation.',
+    sub: 'Spot the golden glow at Azad Nagar — walk in for everyday grooming or a complete occasion transformation.',
     cardTitle: 'Our Studio Front',
-    cardSub: 'Paniyala Road, Gandhi Nagar',
+    cardSub: 'Azad Nagar, Roorkee',
   },
   {
     src: '/hero-2.webp',

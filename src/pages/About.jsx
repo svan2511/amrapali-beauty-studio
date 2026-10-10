@@ -98,8 +98,8 @@ export default function About() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-inverse-surface/45 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-5 left-5 bg-surface-container-lowest/90 backdrop-blur px-4 py-2.5 rounded-2xl ring-1 ring-white/40 shadow-lg">
-                  <p className="font-label-md text-label-md text-on-surface">Paniyala Road Studio</p>
-                  <p className="font-body-sm text-body-sm text-outline">Gandhi Nagar, Roorkee</p>
+                  <p className="font-label-md text-label-md text-on-surface">Azad Nagar Studio</p>
+                  <p className="font-body-sm text-body-sm text-outline">Azad Nagar, Roorkee</p>
                 </div>
               </div>
             </div>
