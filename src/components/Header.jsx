@@ -91,15 +91,15 @@ export default function Header() {
           : 'bg-surface/70 backdrop-blur-xl shadow-[0_8px_32px_-4px_rgba(73,61,53,0.04)]'
       }`}
     >
-      {/* premium gold hairline */}
-      <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-primary-container to-transparent opacity-80" />
-      {/* slim announcement strip */}
+      {/* slim announcement strip — flush to viewport top */}
       <div className="hidden md:flex items-center justify-center gap-2 py-1.5 bg-inverse-surface text-inverse-on-surface">
         <span className="w-1.5 h-1.5 rounded-full bg-primary-fixed-dim pulse-dot" />
         <p className="font-label-sm text-label-sm uppercase tracking-[0.18em]">
           Open all 7 days • 10:00 AM – 8:30 PM 
         </p>
       </div>
+      {/* premium gold hairline below strip — keeps no light edge at viewport top */}
+      <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-primary-container to-transparent opacity-80" />
 
       <div
         className={`max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-6 transition-all duration-500 ${
